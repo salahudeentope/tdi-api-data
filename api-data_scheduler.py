@@ -3,13 +3,14 @@ import pandas as pd
 import os
 import schedule
 import time
+from decouple import config
 
 
 # api-query
-url = "https://free-football-api-data.p.rapidapi.com/football-event-detail"
-querystring = {"eventid":"12651020"}
+url = config("URL")
+querystring = config("QUERY_STRING")
 headers = {
-	"x-rapidapi-key": "a8483f017bmsh524f73ec7d3d25cp1d8ad9jsndc56d8c7f0ff",
+	"x-rapidapi-key": config("API_KEY"),
 	"x-rapidapi-host": "free-football-api-data.p.rapidapi.com"
 }
 
